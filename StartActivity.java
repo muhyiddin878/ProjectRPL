@@ -129,6 +129,9 @@ public class StartActivity extends AppCompatActivity {
 
 
     }
+}
+
+
 //    public void mulaiAnimasiFadein(View view){
 //        ImageView imageView=(ImageView)
 //                findViewById(R.id.tombolstart);
@@ -137,5 +140,3 @@ public class StartActivity extends AppCompatActivity {
 //
 //    }
 
-
-}

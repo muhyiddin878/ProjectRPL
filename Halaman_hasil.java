@@ -37,6 +37,7 @@ public class Halaman_hasil extends AppCompatActivity {
     String jenis2 = MainActivity.jenis1;
     String nama1 = MainActivity.name;
     String tampilan= KuisionerActivity.hasilakhir;
+    String tampilan3= KuisionerActivity.posisi;
 
 
 
@@ -67,18 +68,19 @@ public class Halaman_hasil extends AppCompatActivity {
 
 
         if (tampilan.equals("MAAG")){
-            tampilan2.setText("MAAG");
+            tampilan2.setText(tampilan3+"% MAAG");
 
         }
         else if(tampilan.equals("DISPEPSIA")){
-            tampilan2.setText("DISPEPSIA");
+            tampilan2.setText(tampilan3+"% DISPEPSIA");
+
         }
         else if(tampilan.equals("ANDA TIDAK MENGALAMI GANGGUAN LAMBUNG")){
             tampilan2.setText("ANDA TIDAK MENGALAMI GANGGUAN LAMBUNG");
             rincian.setVisibility(View.GONE);
         }
         else{
-            tampilan2.setText("GERD");
+            tampilan2.setText(tampilan3+"% GERD");
         }
 
 

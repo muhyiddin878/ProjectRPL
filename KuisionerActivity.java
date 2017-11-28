@@ -261,19 +261,22 @@ public class KuisionerActivity extends AppCompatActivity{
 
                                                 if(ok.maag()==0 && ok.dispepsia()==0 && ok.gerd()==0){
                                                     hasilakhir="ANDA TIDAK MENGALAMI GANGGUAN LAMBUNG";
+
                                                 }
 
 
                                                 else if(ok.maag() >= ok.dispepsia() && ok.maag() >= ok.gerd() ){
                                                     hasilakhir= "MAAG";
+                                                    posisi= String.valueOf(ok.maag());
 
                                                 }
                                                 else if (ok.dispepsia() >= ok.maag() && ok.dispepsia() >= ok.gerd()){
                                                     hasilakhir="DISPEPSIA";
-                                                    posisi="dis";
+                                                    posisi= String.valueOf(ok.dispepsia());
 
                                                 } else if (ok.gerd() >= ok.maag() && ok.gerd() >= ok.dispepsia()){
                                                     hasilakhir="GERD";
+                                                    posisi= String.valueOf(ok.gerd());
                                                 }
 
                                                 loading2.setMessage("Silahkan Tunggu....");

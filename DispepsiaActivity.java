@@ -23,10 +23,9 @@ public class DispepsiaActivity extends AppCompatActivity {
     private Activity mActivity;
 
     private RelativeLayout mRelativeLayout;
-    private Button mButton;
-    private ImageButton nButton;
+    private ImageButton mButton;
+    private  ImageButton nButton;
     private  ImageButton lButton;
-
 
     private  ImageButton off;
     private  ImageButton home;
@@ -51,7 +50,7 @@ public class DispepsiaActivity extends AppCompatActivity {
 
         // Get the widgets reference from XML layout
         mRelativeLayout = (RelativeLayout) findViewById(R.id.rl);
-        mButton = (Button) findViewById(R.id.btn);
+        mButton = (ImageButton) findViewById(R.id.btn);
 
         // Set a click listener for the text view
         mButton.setOnClickListener(new View.OnClickListener() {
@@ -99,7 +98,11 @@ public class DispepsiaActivity extends AppCompatActivity {
 
 
 
-        //penanganan dispepsia
+
+
+
+        //tombol penanganan
+
 
 
         // Get the application context
@@ -156,7 +159,6 @@ public class DispepsiaActivity extends AppCompatActivity {
 
 
 
-
         //setting
         // Get the application context
         mContext = getApplicationContext();
@@ -209,9 +211,6 @@ public class DispepsiaActivity extends AppCompatActivity {
                 mPopupWindow.showAtLocation(mRelativeLayout, Gravity.CENTER,0,0);
             }
         });
-
-
-
 
 
 
@@ -306,5 +305,7 @@ public class DispepsiaActivity extends AppCompatActivity {
                 mPopupWindow.showAtLocation(mRelativeLayout, Gravity.CENTER,0,0);
             }
         });
+
+
     }
 }

@@ -23,7 +23,7 @@ public class MaagActivity extends AppCompatActivity {
     private Activity mActivity;
 
     private RelativeLayout mRelativeLayout;
-    private Button mButton;
+    private ImageButton mButton;
     private  ImageButton nButton;
     private  ImageButton lButton;
 
@@ -50,7 +50,7 @@ public class MaagActivity extends AppCompatActivity {
 
         // Get the widgets reference from XML layout
         mRelativeLayout = (RelativeLayout) findViewById(R.id.rl);
-        mButton = (Button) findViewById(R.id.btn);
+        mButton = (ImageButton) findViewById(R.id.btn);
 
         // Set a click listener for the text view
         mButton.setOnClickListener(new View.OnClickListener() {
