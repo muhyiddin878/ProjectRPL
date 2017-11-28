@@ -107,20 +107,20 @@ public class KuisionerActivity extends AppCompatActivity{
                         jawaban = 1;
                         Toast.makeText(KuisionerActivity.this, String.valueOf(jawaban), Toast.LENGTH_SHORT).show();
                         break;
-//                    case R.id.pilihan2:
-//                        jawaban = 0;
-//                        Toast.makeText(KuisionerActivity.this, String.valueOf(jawaban), Toast.LENGTH_SHORT).show();
-//                        break;
-//
-//                    case R.id.pilihan3:
-//                        jawaban =  0.4;
-//                        Toast.makeText(KuisionerActivity.this, String.valueOf(jawaban), Toast.LENGTH_SHORT).show();
-//                        break;
-//
-//                    case R.id.pilihan4:
-//                        jawaban =  0.6;
-//                        Toast.makeText(KuisionerActivity.this, String.valueOf(jawaban), Toast.LENGTH_SHORT).show();
-//                        break;
+                    case R.id.pilihan2:
+                        jawaban = 0;
+                        Toast.makeText(KuisionerActivity.this, String.valueOf(jawaban), Toast.LENGTH_SHORT).show();
+                        break;
+
+                    case R.id.pilihan3:
+                        jawaban =  0.4;
+                        Toast.makeText(KuisionerActivity.this, String.valueOf(jawaban), Toast.LENGTH_SHORT).show();
+                        break;
+
+                    case R.id.pilihan4:
+                        jawaban =  0.6;
+                        Toast.makeText(KuisionerActivity.this, String.valueOf(jawaban), Toast.LENGTH_SHORT).show();
+                        break;
 
                     case R.id.pilihan5:
                         jawaban =  0.8;
@@ -258,9 +258,14 @@ public class KuisionerActivity extends AppCompatActivity{
                                             public void onClick(DialogInterface dialog, int which) {
                                                 diagnosapenyakit ok = new diagnosapenyakit();
 
-                                                if(ok.maag() >= ok.dispepsia() && ok.maag() >= ok.gerd() ){
+
+                                                if(ok.maag()==0 && ok.dispepsia()==0 && ok.gerd()==0){
+                                                    hasilakhir="ANDA TIDAK MENGALAMI GANGGUAN LAMBUNG";
+                                                }
+
+
+                                                else if(ok.maag() >= ok.dispepsia() && ok.maag() >= ok.gerd() ){
                                                     hasilakhir= "MAAG";
-                                                    posisi="mag";
 
                                                 }
                                                 else if (ok.dispepsia() >= ok.maag() && ok.dispepsia() >= ok.gerd()){
@@ -269,8 +274,6 @@ public class KuisionerActivity extends AppCompatActivity{
 
                                                 } else if (ok.gerd() >= ok.maag() && ok.gerd() >= ok.dispepsia()){
                                                     hasilakhir="GERD";
-                                                    posisi="ger";
-
                                                 }
 
                                                 loading2.setMessage("Silahkan Tunggu....");

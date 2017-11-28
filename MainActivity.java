@@ -1,6 +1,8 @@
 package com.example.muhyiddin878.gastricdiseasediagnosis;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
+import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -30,6 +32,7 @@ public class MainActivity extends AppCompatActivity {
     public static  String name;
     public static  String umur;
     public static  String jenis1;
+    ProgressDialog loading1;
 
 
     @Override
@@ -40,6 +43,7 @@ public class MainActivity extends AppCompatActivity {
         nama=(EditText) findViewById(R.id.nama) ;
         usia =(EditText) findViewById(R.id.usia);
         jenis =(Spinner) findViewById(R.id.spin);
+        loading1= new ProgressDialog(this);
 
 
 
@@ -54,10 +58,24 @@ public class MainActivity extends AppCompatActivity {
                 umur=usia.getText().toString();
                 jenis1=jenis.getSelectedItem().toString();
 
+
+
+
                 if (!TextUtils.isEmpty(name)){
                     if (!TextUtils.isEmpty(umur)){
-                        Intent i=new Intent(MainActivity.this, StartActivity.class); //pindah halaman
-                        startActivity(i);
+                        loading1.setMessage("Silahkan Tunggu....");
+                        loading1.setCancelable(false);
+                        loading1.show();
+                        new Handler().postDelayed(new Runnable(){
+                            @Override
+                            public void run(){
+                                loading1.dismiss();
+                                Intent i=new Intent(MainActivity.this, StartActivity.class); //pindah halaman
+                                startActivity(i);
+                            }
+
+                        },3000);
+
                     } else{
                         Toast.makeText(MainActivity.this, "Data Tidak Boleh Kosong", Toast.LENGTH_SHORT).show();
                     }

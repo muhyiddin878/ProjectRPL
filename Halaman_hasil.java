@@ -73,6 +73,10 @@ public class Halaman_hasil extends AppCompatActivity {
         else if(tampilan.equals("DISPEPSIA")){
             tampilan2.setText("DISPEPSIA");
         }
+        else if(tampilan.equals("ANDA TIDAK MENGALAMI GANGGUAN LAMBUNG")){
+            tampilan2.setText("ANDA TIDAK MENGALAMI GANGGUAN LAMBUNG");
+            rincian.setVisibility(View.GONE);
+        }
         else{
             tampilan2.setText("GERD");
         }
@@ -88,19 +92,9 @@ public class Halaman_hasil extends AppCompatActivity {
 
 
 
-
-
-
-
-
-
-
         rincian.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-
-
 
                 if (tampilan.equals("MAAG")){
                     Intent i=new Intent(Halaman_hasil.this, MaagActivity.class); //pindah halaman
@@ -111,6 +105,7 @@ public class Halaman_hasil extends AppCompatActivity {
                     Intent i=new Intent(Halaman_hasil.this, DispepsiaActivity.class); //pindah halaman
                     startActivity(i);
                 }
+
                 else{
                     Intent i=new Intent(Halaman_hasil.this, GerdActivity.class); //pindah halaman
                     startActivity(i);

@@ -120,19 +120,8 @@ public class StartActivity extends AppCompatActivity {
                 soal[14].setSoal("Apakah anda merasa panas didada ?");
                 soal[14].setIdsoal(15);
 
-        loading1.setMessage("Silahkan Tunggu....");
-                loading1.setCancelable(false);
-                loading1.show();
-        new Handler().postDelayed(new Runnable(){
-            @Override
-            public void run(){
-                loading1.dismiss();
                 Intent i=new Intent(StartActivity.this, KuisionerActivity.class); //pindah halaman
                 startActivity(i);
-            }
-
-        },3000);
-
 
             }
         });
@@ -140,13 +129,13 @@ public class StartActivity extends AppCompatActivity {
 
 
     }
-    public void mulaiAnimasiFadein(View view){
-        ImageView imageView=(ImageView)
-                findViewById(R.id.tombolstart);
-        Animation startAnimation= AnimationUtils.loadAnimation(getApplicationContext(),R.anim.fadein);
-        imageView.startAnimation(startAnimation);
-
-    }
+//    public void mulaiAnimasiFadein(View view){
+//        ImageView imageView=(ImageView)
+//                findViewById(R.id.tombolstart);
+//        Animation startAnimation= AnimationUtils.loadAnimation(getApplicationContext(),R.anim.fadein);
+//        imageView.startAnimation(startAnimation);
+//
+//    }
 
 
 }
