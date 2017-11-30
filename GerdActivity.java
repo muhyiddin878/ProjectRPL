@@ -31,6 +31,7 @@ public class GerdActivity extends AppCompatActivity {
     private  ImageButton home;
 
     private PopupWindow mPopupWindow;
+    private  ImageButton tentang;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -270,6 +271,25 @@ public class GerdActivity extends AppCompatActivity {
                     public void onClick(View v) {
                         Intent i=new Intent(GerdActivity.this, MainActivity.class); //pindah halaman
                         startActivity(i);
+                    }
+                });
+                tentang= (ImageButton) customView.findViewById(R.id.tomboltentang);
+                tentang.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        AlertDialog.Builder builder= new AlertDialog.Builder(GerdActivity.this);
+                        builder.setMessage("Gastric Disease Diagnose V.1.0.0 by Muhyiddin Ubaidillah")
+                                .setCancelable(true)
+                                .setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                                    @Override
+                                    public void onClick(DialogInterface dialog, int which) {
+                                        dialog.cancel();
+
+                                    }
+                                });
+
+                        AlertDialog alert=builder.create();
+                        alert.show();
                     }
                 });
 //

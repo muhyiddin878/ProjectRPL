@@ -26,11 +26,13 @@ public class DispepsiaActivity extends AppCompatActivity {
     private ImageButton mButton;
     private  ImageButton nButton;
     private  ImageButton lButton;
+    private  ImageButton jButton;
 
     private  ImageButton off;
     private  ImageButton home;
 
     private PopupWindow mPopupWindow;
+    private ImageButton tentang;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -113,10 +115,10 @@ public class DispepsiaActivity extends AppCompatActivity {
 
         // Get the widgets reference from XML layout
         mRelativeLayout = (RelativeLayout) findViewById(R.id.rl);
-        nButton = (ImageButton) findViewById(R.id.tombolpenanganan);
+        jButton = (ImageButton) findViewById(R.id.tombolpenanganan);
 
         // Set a click listener for the text view
-        nButton.setOnClickListener(new View.OnClickListener() {
+        jButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 // Initialize a new instance of LayoutInflater service
@@ -160,60 +162,6 @@ public class DispepsiaActivity extends AppCompatActivity {
 
 
         //setting
-        // Get the application context
-        mContext = getApplicationContext();
-
-        // Get the activity
-        mActivity = DispepsiaActivity.this;
-
-        // Get the widgets reference from XML layout
-        mRelativeLayout = (RelativeLayout) findViewById(R.id.rl);
-        lButton = (ImageButton) findViewById(R.id.tombolsetting);
-
-        // Set a click listener for the text view
-        lButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                // Initialize a new instance of LayoutInflater service
-                LayoutInflater inflater = (LayoutInflater) mContext.getSystemService(LAYOUT_INFLATER_SERVICE);
-
-
-                // Inflate the custom layout/view
-                View customView = inflater.inflate(R.layout.custom_layout_setting,null);
-
-                // Initialize a new instance of popup window
-                mPopupWindow = new PopupWindow(
-                        customView,
-                        ViewGroup.LayoutParams.WRAP_CONTENT,
-                        ViewGroup.LayoutParams.WRAP_CONTENT
-                );
-
-                // Set an elevation value for popup window
-                // Call requires API level 21
-                if(Build.VERSION.SDK_INT>=24){
-                    mPopupWindow.setElevation(5.0f);
-                }
-
-                // Get a reference for the custom view close button
-                ImageButton closeButton = (ImageButton) customView.findViewById(R.id.ib_close);
-
-                // Set a click listener for the popup window close button
-                closeButton.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
-                        // Dismiss the popup window
-                        mPopupWindow.dismiss();
-                    }
-                });
-
-
-                // Finally, show the popup window at the center location of root relative layout
-                mPopupWindow.showAtLocation(mRelativeLayout, Gravity.CENTER,0,0);
-            }
-        });
-
-
-
 
 
         // Get the application context
@@ -270,6 +218,25 @@ public class DispepsiaActivity extends AppCompatActivity {
                     public void onClick(View v) {
                         Intent i=new Intent(DispepsiaActivity.this, MainActivity.class); //pindah halaman
                         startActivity(i);
+                    }
+                });
+                tentang= (ImageButton) customView.findViewById(R.id.tomboltentang);
+                tentang.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        AlertDialog.Builder builder= new AlertDialog.Builder(DispepsiaActivity.this);
+                        builder.setMessage("Gastric Disease Diagnose V.1.0.0 by Muhyiddin Ubaidillah")
+                                .setCancelable(true)
+                                .setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                                    @Override
+                                    public void onClick(DialogInterface dialog, int which) {
+                                        dialog.cancel();
+
+                                    }
+                                });
+
+                        AlertDialog alert=builder.create();
+                        alert.show();
                     }
                 });
 //

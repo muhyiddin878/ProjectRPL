@@ -28,6 +28,8 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.text.DecimalFormat;
+
 
 public class KuisionerActivity extends AppCompatActivity{
 
@@ -42,6 +44,7 @@ public class KuisionerActivity extends AppCompatActivity{
 
     private  ImageButton off;
     private  ImageButton home;
+    private  ImageButton tentang;
 
     ImageView kl;
     ImageButton next;
@@ -267,16 +270,16 @@ public class KuisionerActivity extends AppCompatActivity{
 
                                                 else if(ok.maag() >= ok.dispepsia() && ok.maag() >= ok.gerd() ){
                                                     hasilakhir= "MAAG";
-                                                    posisi= String.valueOf(ok.maag());
+                                                    posisi= posisi= String.valueOf((new DecimalFormat("##.##").format(ok.maag())));
 
                                                 }
                                                 else if (ok.dispepsia() >= ok.maag() && ok.dispepsia() >= ok.gerd()){
                                                     hasilakhir="DISPEPSIA";
-                                                    posisi= String.valueOf(ok.dispepsia());
+                                                    posisi= String.valueOf((new DecimalFormat("##.##").format(ok.dispepsia())));
 
                                                 } else if (ok.gerd() >= ok.maag() && ok.gerd() >= ok.dispepsia()){
                                                     hasilakhir="GERD";
-                                                    posisi= String.valueOf(ok.gerd());
+                                                    posisi= posisi= String.valueOf((new DecimalFormat("##.##").format(ok.gerd())));
                                                 }
 
                                                 loading2.setMessage("Silahkan Tunggu....");
@@ -338,6 +341,7 @@ public class KuisionerActivity extends AppCompatActivity{
                 View customView = inflater.inflate(R.layout.custom_layout_setting,null);
                 home =(ImageButton) customView.findViewById(R.id.tombolhome);
                 off = (ImageButton) customView.findViewById(R.id.tomboloff);
+                tentang= (ImageButton) customView.findViewById(R.id.tomboltentang);
                 off.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
@@ -371,9 +375,28 @@ public class KuisionerActivity extends AppCompatActivity{
                         startActivity(i);
                     }
                 });
-//
-//
-//
+
+                tentang.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        AlertDialog.Builder builder= new AlertDialog.Builder(KuisionerActivity.this);
+                        builder.setMessage("Gastric Disease Diagnose V.1.0.0 by Muhyiddin Ubaidillah")
+                                .setCancelable(true)
+                                .setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                                    @Override
+                                    public void onClick(DialogInterface dialog, int which) {
+                                        dialog.cancel();
+
+                                    }
+                                });
+
+                        AlertDialog alert=builder.create();
+                        alert.show();
+                    }
+                });
+
+
+
                 // Initialize a new instance of popup window
                 mPopupWindow = new PopupWindow(
                         customView,
@@ -404,6 +427,7 @@ public class KuisionerActivity extends AppCompatActivity{
                 mPopupWindow.showAtLocation(mRelativeLayout, Gravity.CENTER,0,0);
             }
         });
+
 
 
 
