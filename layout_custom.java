@@ -6,15 +6,15 @@ import android.widget.TextView;
 
 public class layout_custom extends AppCompatActivity {
 
-    String tangkap= KuisionerActivity.hasilakhir;
+//    String tangkap= KuisionerActivity.hasilakhir;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.custom_layout_rician_maag);
 
-        TextView rincian2=(TextView) findViewById(R.id.show);
-        rincian2.setText(tangkap);
+//        TextView rincian2=(TextView) findViewById(R.id.show);
+//        rincian2.setText(tangkap);
 
 
 
