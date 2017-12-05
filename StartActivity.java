@@ -67,11 +67,11 @@ public class StartActivity extends AppCompatActivity {
                 soal[1].setIdsoal(2);
 
                 soal[2] = new Soal();
-                soal[2].setSoal("Apakah anda Sering merasa lapar ?");
+                soal[2].setSoal("Apakah anda sering merasa lapar ?");
                 soal[2].setIdsoal(3);
 
                 soal[3] = new Soal();
-                soal[3].setSoal("Apakah anda merasa Mual dan muntah ?");
+                soal[3].setSoal("Apakah anda merasa mual dan muntah ?");
                 soal[3].setIdsoal(4);
 
 
@@ -88,15 +88,15 @@ public class StartActivity extends AppCompatActivity {
                 soal[6].setIdsoal(7);
 
                 soal[7] = new Soal();
-                soal[7].setSoal("Apakah anda merasa Perasaan panas di dada dan perut ?");
+                soal[7].setSoal("Apakah anda merasa perasaan panas di dada dan perut ?");
                 soal[7].setIdsoal(8);
 
                 soal[8] = new Soal();
-                soal[8].setSoal("Apakah anda Mengeluarkan gas asam dari mulut ?");
+                soal[8].setSoal("Apakah anda mengeluarkan gas asam dari mulut ?");
                 soal[8].setIdsoal(9);
 
                 soal[9] = new Soal();
-                soal[9].setSoal("Apakah anda merasa Rasa tidak nyaman waktu menelan ?");
+                soal[9].setSoal("Apakah anda merasa rasa tidak nyaman waktu menelan ?");
                 soal[0].setIdsoal(10);
 
 
@@ -109,7 +109,7 @@ public class StartActivity extends AppCompatActivity {
                 soal[11].setIdsoal(12);
 
                 soal[12] = new Soal();
-                soal[12].setSoal("Apakah anda mengalami Gangguan pencernaan?");
+                soal[12].setSoal("Apakah anda mengalami gangguan pencernaan?");
                 soal[12].setIdsoal(13);
 
                 soal[13] = new Soal();

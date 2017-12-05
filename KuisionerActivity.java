@@ -75,8 +75,6 @@ public class KuisionerActivity extends AppCompatActivity{
         setContentView(R.layout.activity_kuisioner);
 
         quest = (TextView) findViewById(R.id.soal);
-//        YA = (RadioButton) findViewById(R.id.pilihan1);
-//        TIDAK = (RadioButton) findViewById(R.id.pilihan2);
         group = (RadioGroup) findViewById(R.id.choice);
         next= (ImageButton) findViewById(R.id.tombolnext);
 
@@ -108,26 +106,21 @@ public class KuisionerActivity extends AppCompatActivity{
                 switch (i) {
                     case R.id.pilihan1:
                         jawaban = 1;
-                        Toast.makeText(KuisionerActivity.this, String.valueOf(jawaban), Toast.LENGTH_SHORT).show();
                         break;
                     case R.id.pilihan2:
                         jawaban = 0;
-                        Toast.makeText(KuisionerActivity.this, String.valueOf(jawaban), Toast.LENGTH_SHORT).show();
                         break;
 
                     case R.id.pilihan3:
                         jawaban =  0.4;
-                        Toast.makeText(KuisionerActivity.this, String.valueOf(jawaban), Toast.LENGTH_SHORT).show();
                         break;
 
                     case R.id.pilihan4:
                         jawaban =  0.6;
-                        Toast.makeText(KuisionerActivity.this, String.valueOf(jawaban), Toast.LENGTH_SHORT).show();
                         break;
 
                     case R.id.pilihan5:
                         jawaban =  0.8;
-                        Toast.makeText(KuisionerActivity.this, String.valueOf(jawaban), Toast.LENGTH_SHORT).show();
                         break;
 
                 }
@@ -191,8 +184,7 @@ public class KuisionerActivity extends AppCompatActivity{
                             load++;
                             setSoal(load);
                             group.clearCheck();
-
-                            Toast.makeText(KuisionerActivity.this, jawaban+ String.valueOf(load), Toast.LENGTH_SHORT).show();
+                            //Toast.makeText(KuisionerActivity.this, jawaban+ String.valueOf(load), Toast.LENGTH_SHORT).show();
                             jawaban=-1;
 
                         }
@@ -210,8 +202,7 @@ public class KuisionerActivity extends AppCompatActivity{
                             load++;
                             setSoal(load);
                             group.clearCheck();
-
-                            Toast.makeText(KuisionerActivity.this, jawaban + String.valueOf(load), Toast.LENGTH_SHORT).show();
+                            //Toast.makeText(KuisionerActivity.this, jawaban + String.valueOf(load), Toast.LENGTH_SHORT).show();
                             jawaban=-1;
 
                         }
